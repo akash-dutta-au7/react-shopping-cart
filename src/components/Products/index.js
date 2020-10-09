@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import data from "../../data.json";
 import Filter from "../Filter";
 import ProductItem from "../ProductItem";
+import Search from "../Search";
 import "./index.css";
+
 const Products = () => {
+  const [search, setSearch] = useState("");
+  const [toggle, setToggle] = useState(false);
   const [allItems, setAllItems] = useState({
     products: data.products,
     size: "",
     sort: "",
   });
 
+  //sort by price range
   const sortByPrice = (e) => {
     const value = e.target.value;
     console.log(value);
@@ -34,6 +39,7 @@ const Products = () => {
     }
   };
 
+  //sort by size
   const filterBySize = (e) => {
     if (e.target.value === "") {
       setAllItems({ size: e.target.value, products: data.products });
@@ -45,6 +51,11 @@ const Products = () => {
       ),
     });
   };
+
+  const changeToggle = () => {
+    const newToggle = !toggle;
+    setToggle(newToggle);
+  };
   return (
     <div className="container">
       <Filter
@@ -53,11 +64,16 @@ const Products = () => {
         sort={allItems.sort}
         sortByPrice={sortByPrice}
         filterBySize={filterBySize}
+        onChange={changeToggle}
       />
+      {/*<Search products={allItems.products} />*/}
+
       <div className="all-products">
         {allItems.products.map((product) => (
           <ProductItem product={product} key={product._id} />
         ))}
+
+        {}
       </div>
     </div>
   );

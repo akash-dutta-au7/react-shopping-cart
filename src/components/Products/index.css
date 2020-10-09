@@ -1,4 +1,4 @@
-.all-products {
+/* .all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2em;
@@ -6,4 +6,9 @@
   margin-top: 7rem;
   margin-bottom: 14rem;
   list-style-type: none;
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
 }
