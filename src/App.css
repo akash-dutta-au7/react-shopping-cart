@@ -1,0 +1,6 @@
+.main-grid-area {
+  display: grid;
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-columns: 1fr;
+  height: 100%;
+}
