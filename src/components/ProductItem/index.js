@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import "./index.css";
 const ProductItem = ({ product }) => {
-  console.log(product.title);
   return (
     <Fragment>
       <li key={product._id} className="product-li">
