@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 const Filter = ({ product, size, sort, sortByPrice, filterBySize }) => {
+  console.log("From filter page", product);
   return (
     <div className="filter">
       <div className="filter-container">
