@@ -81,16 +81,15 @@ function App() {
       </header>
       <main>
         <div className="content-page">
-          <Filter
-            product={!!allItems.products && allItems.products.length}
-            size={allItems.size}
-            sort={allItems.sort}
-            sortByPrice={sortByPrice}
-            filterBySize={filterBySize}
-            onChange={changeToggle}
-          />
           <div className="main-product">
-            {" "}
+            <Filter
+              product={!!allItems.products && allItems.products.length}
+              size={allItems.size}
+              sort={allItems.sort}
+              sortByPrice={sortByPrice}
+              filterBySize={filterBySize}
+              onChange={changeToggle}
+            />{" "}
             <Products addToCart={addToCart} products={allItems.products} />
           </div>
           <div className="side-cart">
