@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import data from "../../data.json";
 import Filter from "../Filter";
 import ProductItem from "../ProductItem";
-import Search from "../Search";
+// import Search from "../Search";
 import "./index.css";
 
 const Products = () => {
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
   const [toggle, setToggle] = useState(false);
   const [allItems, setAllItems] = useState({
     products: data.products,
