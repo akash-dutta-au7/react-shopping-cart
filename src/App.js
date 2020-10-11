@@ -32,6 +32,14 @@ function App() {
     });
   };
 
+  //remove from cart
+
+  const removeFromCart = (product) => {
+    const cartItems = allItems.cartItems.slice();
+    setAllItems({
+      cartItems: cartItems.filter((item) => item._id !== product._id),
+    });
+  };
   //sort by price range
   const sortByPrice = (e) => {
     const value = e.target.value;
@@ -93,7 +101,10 @@ function App() {
             <Products addToCart={addToCart} products={allItems.products} />
           </div>
           <div className="side-cart">
-            <Cart cartItems={allItems.cartItems} />
+            <Cart
+              cartItems={allItems.cartItems}
+              removeFromCart={removeFromCart}
+            />
           </div>
         </div>
       </main>

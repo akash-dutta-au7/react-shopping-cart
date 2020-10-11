@@ -161,7 +161,7 @@ footer {
 .cart-items li div:last-child {
   flex: 1;
 }
-.right {
+.button-right {
   text-align: right;
 }
 .total {

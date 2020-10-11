@@ -28,14 +28,9 @@ const Products = ({ products, addToCart }) => {
               </div>
             </li>
           ))}
-
-        {}
       </ul>
     </div>
   );
 };
 
-// const mapStateToProps = (state) => ({
-//   cartItems: state.cartReducer.cartItems,
-// });
 export default Products;
