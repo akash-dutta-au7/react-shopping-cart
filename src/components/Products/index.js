@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import data from "../../data.json";
 import Filter from "../Filter";
@@ -56,27 +57,41 @@ const Products = () => {
     const newToggle = !toggle;
     setToggle(newToggle);
   };
-  return (
-    <div className="container">
-      <Filter
-        product={allItems.products.length}
-        size={allItems.size}
-        sort={allItems.sort}
-        sortByPrice={sortByPrice}
-        filterBySize={filterBySize}
-        onChange={changeToggle}
-      />
-      {/*<Search products={allItems.products} />*/}
 
-      <div className="all-products">
-        {allItems.products.map((product) => (
-          <ProductItem product={product} key={product._id} />
-        ))}
+  return (
+    <div>
+      {/*<Search products={allItems.products} />*/}
+      <ul className="products">
+        {!!products &&
+          products.length > 0 &&
+          products.map((product) => (
+            <li key={product._id}>
+              <div className="product">
+                <a href={"#" + product._id}>
+                  <img src={product.image} alt={product.title} />
+                  <p className="product-title">{product.title}</p>
+                </a>
+
+                <div className="product-price">
+                  <div>INR {product.price}</div>
+                  <button
+                    className="add-to-cart-btn primary"
+                    onClick={() => addToCart(product)}
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </li>
+          ))}
 
         {}
-      </div>
+      </ul>
     </div>
   );
 };
 
+// const mapStateToProps = (state) => ({
+//   cartItems: state.cartReducer.cartItems,
+// });
 export default Products;
